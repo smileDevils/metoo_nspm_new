@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.metoo.monitor.core.mapper.RuleMapper">
+
+    <insert id="save" parameterType="com.metoo.monitor.core.entity.Rule">
+        INSERT INTO metoo_rule
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="policyId != null">
+                policyId,
+            </if>
+            <if test="policyName != null">
+                policyName,
+            </if>
+            <if test="srcIp != null">
+                srcIp,
+            </if>
+            <if test="srcMask != null">
+                srcMask,
+            </if>
+            <if test="srcPort1 != null">
+                srcPort1,
+            </if>
+            <if test="srcPort2 != null">
+                srcPort2,
+            </if>
+            <if test="dstIp != null">
+                dstIp,
+            </if>
+            <if test="dstMask != null">
+                dstMask,
+            </if>
+            <if test="dstPort1 != null">
+                dstPort1,
+            </if>
+            <if test="dstPort2 != null">
+                dstPort2,
+            </if>
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            <if test="policyId != null">
+                #{policyId},
+            </if>
+            <if test="policyName != null">
+                #{policyName},
+            </if>
+            <if test="srcIp != null">
+                #{srcIp},
+            </if>
+            <if test="srcMask != null">
+                #{srcMask},
+            </if>
+            <if test="srcPort1 != null">
+                #{srcPort1},
+            </if>
+            <if test="srcPort2 != null">
+                #{srcPort2},
+            </if>
+            <if test="dstIp != null">
+                #{dstIp},
+            </if>
+            <if test="dstMask != null">
+                #{dstMask},
+            </if>
+            <if test="dstPort1 != null">
+                #{dstPort1},
+            </if>
+            <if test="dstPort2 != null">
+                #{dstPort2},
+            </if>
+        </trim>
+    </insert>
+
+</mapper>
